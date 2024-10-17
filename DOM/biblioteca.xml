@@ -1,0 +1,22 @@
+<?xml version="0.1" encoding="UTF-8"?>
+<Biblioteca>
+
+<libro> 
+<titulo> El principito </titulo> 
+<autor> Antoine de Saint-Exupéry </autor>
+<anio>1943<anio>
+</libro>
+
+<libro> 
+<titulo> 1984 </titulo> 
+<autor> George Orwell </autor>
+<anio>1949<anio>
+</libro>
+
+<libro> 
+<titulo> Crimen y castigo </titulo> 
+<autor> Fiddor Dostoyevski </autor>
+<anio>1966<anio>
+</libro>
+
+</Biblioteca>
