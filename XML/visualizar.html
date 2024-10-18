@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizador de datos</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script>
+        function mostrarDatos() {
+            //obtener el xml almacenado en localStorage
+            const xmlData = localStorage.getItem('usuarioXML');
+            if(xmlData) {
+                //parsear XML
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(xmlData, "application/xml");
+
+                //extraer informacion
+                const nombre = xmlDoc.getElementsByTagName("nombre")[0].textContent;
+                const email = xmlDoc.getElementsByTagName("email")[0].textContent;
+                const anio = xmlDoc.getElementsByTagName("anio")[0].textContent;
+
+                //mostar informacion HTML
+                document.getElementById("resultado").innerHTML = `
+                 <h2>Datos recibidos</h2>
+                 <p><strong>Nombre:</strong> ${nombre}</p> 
+                 <p><strong>Email:</strong> ${email}</p> 
+                 <p><strong>A;o de nacimiendo:</strong> ${anio}</p> 
+                `;
+            } else {
+                document.getElementById("resultado").innerHTML = "    <p> Por favor inserte los datos</p>";
+            }
+        }
+        ;
+    </script>
+</head>
+
+<body onload="mostrarDatos()">
+    <h1>Visualizador de datos</h1>
+    <div id="resultado"></div>
+    
+</body>
+</html>
